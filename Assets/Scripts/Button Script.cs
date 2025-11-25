@@ -1,6 +1,9 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -26,5 +29,14 @@ public class ButtonScript : MonoBehaviour
     {
         
     }
-    
+    public void LoadSceneByName()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void LoadNextInBuild()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 }

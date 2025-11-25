@@ -131,8 +131,9 @@ GameObject:
   - component: {fileID: 257226506}
   - component: {fileID: 257226505}
   - component: {fileID: 257226504}
+  - component: {fileID: 257226507}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Level 1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +202,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 257226505}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1240232768}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: LoadSceneByName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &257226505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +253,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257226502}
   m_CullTransparentMesh: 1
+--- !u!114 &257226507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257226502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baadead8ef24a6c40ba07f7237f065cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  buttonText: {fileID: 629878057}
 --- !u!1 &362619456
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,8 +278,9 @@ GameObject:
   - component: {fileID: 362619460}
   - component: {fileID: 362619459}
   - component: {fileID: 362619458}
+  - component: {fileID: 362619461}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Level 2 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -125}
+  m_AnchoredPosition: {x: 0, y: -140}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362619458
@@ -322,7 +349,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 362619459}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1240232768}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: LoadSceneByName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &362619459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +400,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362619456}
   m_CullTransparentMesh: 1
+--- !u!114 &362619461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362619456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baadead8ef24a6c40ba07f7237f065cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  buttonText: {fileID: 926262699}
 --- !u!1 &366351272
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +973,7 @@ GameObject:
   - component: {fileID: 1240232766}
   - component: {fileID: 1240232765}
   - component: {fileID: 1240232764}
+  - component: {fileID: 1240232768}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1012,6 +1065,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1240232768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240232763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baadead8ef24a6c40ba07f7237f065cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  buttonText: {fileID: 0}
 --- !u!1 &1593901109
 GameObject:
   m_ObjectHideFlags: 0
