@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour
     float xv, zv;
     bool isGrounded;
     LayerMask groundLayerMask;
+    AudioSource audioSource;
+    public AudioClip sfx1;  // sound effect asset from sfx folder 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +30,8 @@ public class PlayerScript : MonoBehaviour
         currentHealth = startHealth;
 
         LevelManagerScript.instance.SetHighScore(50);
+        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -90,5 +94,9 @@ public class PlayerScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void PlaySoundEffect()
+        {
+            audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
+        }
 
 }

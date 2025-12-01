@@ -11,6 +11,8 @@ public class EnemyScript : MonoBehaviour
     public Transform respawnPoint;
     private PlayerScript playerHealth;
     public int damage = 1;
+    AudioSource audioSource;
+    public AudioClip sfx1;  // sound effect asset from sfx folder 
 
     public EnemyScript()
     {
@@ -22,6 +24,9 @@ public class EnemyScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         groundLayerMask = LayerMask.GetMask("Ground");
+        
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -49,6 +54,10 @@ public class EnemyScript : MonoBehaviour
             //Player.transform.position = respawnPoint.position;
             other.transform.position = respawnPoint.position;
         }
+    }
+    void PlaySoundEffect()
+    {
+        audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
     }
 
 }
