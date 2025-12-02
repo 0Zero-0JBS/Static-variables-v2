@@ -280,6 +280,8 @@ MonoBehaviour:
   startHealth: 3
   body: {fileID: 516119447}
   sfx1: {fileID: 0}
+  playerScore: 0
+  highScore: 0
 --- !u!136 &516119449
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -610,7 +612,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
   buttonText: {fileID: 1019121430}
-  sfx1: {fileID: 8300000, guid: 68aa4a0f2b05f20499a68711421ee7ac, type: 3}
 --- !u!114 &1020461749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,7 +1468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
   buttonText: {fileID: 0}
-  sfx1: {fileID: 0}
 --- !u!1 &1855851248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
   buttonText: {fileID: 1867961515}
-  sfx1: {fileID: 8300000, guid: 68aa4a0f2b05f20499a68711421ee7ac, type: 3}
 --- !u!114 &1855851251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,7 +2034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -665, y: -194}
+  m_AnchoredPosition: {x: -665, y: -196}
   m_SizeDelta: {x: 24, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1973344330
@@ -2323,7 +2322,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
   buttonText: {fileID: 1973344332}
-  sfx1: {fileID: 8300000, guid: 68aa4a0f2b05f20499a68711421ee7ac, type: 3}
 --- !u!81 &1975601015
 AudioListener:
   m_ObjectHideFlags: 0

@@ -1,5 +1,8 @@
+using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -13,6 +16,9 @@ public class PlayerScript : MonoBehaviour
     LayerMask groundLayerMask;
     AudioSource audioSource;
     public AudioClip sfx1;  // sound effect asset from sfx folder 
+    public int playerScore = 0; //This is the player's score.
+    public int highScore = 1000;
+   
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,8 +36,22 @@ public class PlayerScript : MonoBehaviour
         currentHealth = startHealth;
 
         LevelManagerScript.instance.SetHighScore(50);
-        
+
         audioSource = GetComponent<AudioSource>();
+
+        // Before reading the key, check to see if a value has been stored in it.
+        if (PlayerPrefs.HasKey("High_score") == true)
+        {
+            // the key musicVol holds a value, therefore we can
+            //retrieve it and store it in a variable
+            highScore = PlayerPrefs.GetInt("High_score");
+        }
+        else
+        {
+            // the key musicVol is null so give it a default value of 0.5f
+            PlayerPrefs.SetInt("High_score", 1000);
+        }
+        
     }
 
     // Update is called once per frame
@@ -63,7 +83,19 @@ public class PlayerScript : MonoBehaviour
             zvel = -5;
         }
 
-        body.linearVelocity = new Vector3(xvel, 0, zvel);  
+        body.linearVelocity = new Vector3(xvel, 0, zvel);
+
+        if (Input.GetKey("+"))
+        {
+            playerScore += 10;
+        }
+
+        if (Input.GetKey("-"))
+        {
+            playerScore -= 10;
+        }
+
+        
     }
 
     private void OnCollisionExit(Collision collision)
@@ -89,14 +121,22 @@ public class PlayerScript : MonoBehaviour
     {
         playerHealth -= amount;
 
-        if(playerHealth <= 0)
+        if (playerHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
-    void PlaySoundEffect()
-        {
-            audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
-        }
 
+    void PlaySoundEffect()
+    {
+        audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
+    }
+    static void Main(string[] args)
+    {
+        Console.Title = "Player score: ";
+
+        string input;
+
+        int[] 
+    }
 }
