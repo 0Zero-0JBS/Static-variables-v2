@@ -3,7 +3,7 @@ using UnityEngine;
 public class LevelManagerScript : MonoBehaviour
 {
     public static LevelManagerScript instance;
-    private int highScore;
+    //private int highScore;
     public int playerHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,14 +25,14 @@ public class LevelManagerScript : MonoBehaviour
         }
 
     }
-    public void SetHighScore(int score)
+    /*public void SetHighScore(int score)
     {
         highScore = score;
     }
     public int GetHighScore()
     {
         return highScore;
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -40,7 +40,7 @@ public class LevelManagerScript : MonoBehaviour
         transform.Rotate(0, 0.1f, 0);
     }
 
-    private void OnGUI()
+    /*private void OnGUI()
     {
         //read variable from LevelManager singleton
         int score = LevelManagerScript.instance.GetHighScore();
@@ -54,6 +54,6 @@ public class LevelManagerScript : MonoBehaviour
         GUILayout.BeginArea(new Rect(10f, 10f, 1600f, 1600f));
         GUILayout.Label($"<size=24>{text}</size>");
         GUILayout.EndArea();
-    }
+    }*/
 
 }

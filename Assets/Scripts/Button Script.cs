@@ -12,6 +12,8 @@ public class ButtonScript : MonoBehaviour
     //AudioSource audioSource;
     //public AudioClip sfx1;  // sound effect asset from sfx folder
 
+    
+
     public void ButtonMethod()
     {
         buttonText.text = "Clicked!";
@@ -32,7 +34,7 @@ public class ButtonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void LoadSceneByName()
     {
@@ -50,5 +52,20 @@ public class ButtonScript : MonoBehaviour
         audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
     }
     */
+
+    public void GoToFrontend()
+    {
+        SceneManager.LoadScene("Frontend");
+    }
+
+    public void GoToLevel1()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void GoToLevel2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
 
 }

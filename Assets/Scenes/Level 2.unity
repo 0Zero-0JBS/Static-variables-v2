@@ -503,7 +503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
   buttonText: {fileID: 0}
-  sfx1: {fileID: 0}
 --- !u!1 &1506682928
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
   buttonText: {fileID: 1511973465}
-  sfx1: {fileID: 8300000, guid: 68aa4a0f2b05f20499a68711421ee7ac, type: 3}
 --- !u!114 &2120913445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,7 +970,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1111008915}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: LoadSceneByName
+        m_MethodName: GoToFrontend
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

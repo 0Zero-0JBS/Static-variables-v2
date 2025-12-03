@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour
         startPosition = transform.position;
         currentHealth = startHealth;
 
-        LevelManagerScript.instance.SetHighScore(50);
+        //LevelManagerScript.instance.SetHighScore(50);
 
         audioSource = GetComponent<AudioSource>();
 
@@ -137,6 +137,17 @@ public class PlayerScript : MonoBehaviour
 
         string input;
 
-        int[] 
+        input = Console.ReadLine();
+
+        int[] arrScores = new int[Convert.ToInt32(input)];
+
+        for(int i = 0; i< arrScores.Length; i++)
+        {
+            Console.WriteLine("Player score: ", arrScores[i]);
+            input = Console.ReadLine();
+            arrScores[i] = Convert.ToInt32(input);
+        }
+
+        Array.Sort(arrScores);
     }
 }

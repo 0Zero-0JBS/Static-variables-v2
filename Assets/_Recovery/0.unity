@@ -461,7 +461,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1240232768}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: GoToLevel2
+        m_MethodName: LoadSceneByName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
