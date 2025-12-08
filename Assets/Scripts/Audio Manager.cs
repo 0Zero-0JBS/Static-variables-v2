@@ -6,11 +6,10 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-
     public AudioClip[] clips;
     AudioSource audioSource; //reference to the audio source component on the game object
-
     public Sounds[] sounds;
+    public float musicVolume, sfxVolume;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +37,7 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
         }
     }
-
+    
     public void PlayClip(int clipNumber)
     {
         audioSource = GetComponent<AudioSource>();

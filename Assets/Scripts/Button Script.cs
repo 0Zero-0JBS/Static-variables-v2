@@ -9,10 +9,11 @@ public class ButtonScript : MonoBehaviour
 {
     //public variable to reference the button text - set this up in the Unity editor
     public TMP_Text buttonText;
-    //AudioSource audioSource;
-    //public AudioClip sfx1;  // sound effect asset from sfx folder
-
-    
+    AudioSource audioSource;
+    public AudioClip sfx1;  // sound effect asset from sfx folder
+    int sceneIndex;
+    int sceneToOpen;
+    int sceneNumber;
 
     public void ButtonMethod()
     {
@@ -24,38 +25,19 @@ public class ButtonScript : MonoBehaviour
         FindFirstObjectByType<AudioManager>().Play("Edited floop");
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void ChangeMusicVolume(float volume)
     {
-        //audioSource = GetComponent<AudioSource>();
-
+        AudioManager.instance.musicVolume = volume;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayGame()
     {
-
-    }
-    public void LoadSceneByName()
-    {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadSceneAsync("Level 1");
     }
 
-    public void LoadNextInBuild()
+    public void QuitGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    /*
-    void PlaySoundEffect()
-    {
-        audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
-    }
-    */
-
-    public void GoToFrontend()
-    {
-        SceneManager.LoadScene("Frontend");
+        Application.Quit();
     }
 
     public void GoToLevel1()
@@ -68,4 +50,49 @@ public class ButtonScript : MonoBehaviour
         SceneManager.LoadScene("Level 2");
     }
 
+    public void GoToOptions()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (!PlayerPrefs.HasKey("previousScene" + sceneIndex))
+        {
+            PlayerPrefs.SetInt("previousScene" + sceneIndex, sceneIndex);
+        }
+
+        sceneToOpen = PlayerPrefs.GetInt("previousScene" + sceneIndex);
+    }
+
+    public void OnButtonClick()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneToOpen);
+        PlayerPrefs.SetInt("previousScene" + sceneNumber, currentScene);
+        SceneManager.LoadScene(sceneNumber);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+
+    public void LoadNextInBuild()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    
+    void PlaySoundEffect()
+    {
+        audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
+    }
+    
+
+    
 }
