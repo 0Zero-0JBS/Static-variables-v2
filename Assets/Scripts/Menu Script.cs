@@ -9,9 +9,9 @@ public class MenuScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         AudioManager.instance.ChangeAudioSourceVolume("Music", AudioManager.instance.musicVolume);
-    }
+    }*/
 }
  

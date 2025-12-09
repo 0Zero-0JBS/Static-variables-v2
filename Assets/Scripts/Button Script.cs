@@ -55,6 +55,16 @@ public class ButtonScript : MonoBehaviour
         SceneManager.LoadScene("Options");
     }
 
+    public void GoToLevel1Game()
+    {
+        SceneManager.LoadScene("Level 1 Game");
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
